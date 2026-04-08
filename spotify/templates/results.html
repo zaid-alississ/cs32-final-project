@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Taste Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="nav-title">Spotify Taste Profile</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/results">Results</a>
+        </div>
+    </nav>
+
+    <main class="results-page">
+        <section class="profile-card">
+            <h1>{{ profile_name }}</h1>
+            <p>{{ profile_description }}</p>
+        </section>
+
+        <section class="info-grid">
+            <div class="info-box">
+                <h2>Top Artists</h2>
+                <ul>
+                    {% for artist in top_artists %}
+                        <li>{{ artist }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h2>Top Genres</h2>
+                <ul>
+                    {% for genre in top_genres %}
+                        <li>{{ genre }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <section class="score-box">
+            <h2>Your Listening Scores</h2>
+            <div class="score-list">
+                {% for category, value in scores.items() %}
+                    <div class="score-item">
+                        <span class="score-label">{{ category }}</span>
+                        <div class="score-bar-background">
+                            <div class="score-bar-fill" style="width: {{ value }}%;"></div>
+                        </div>
+                        <span class="score-value">{{ value }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body>
+</html>

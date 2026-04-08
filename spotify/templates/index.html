@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Taste Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="nav-title">Spotify Taste Profile</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/results">Sample Results</a>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <h1>Discover Your Spotify Taste Profile</h1>
+        <p>
+            This project analyzes your music habits and gives you a personalized taste profile
+            based on your top artists, genres, and listening patterns.
+        </p>
+
+        <div class="button-group">
+            <a class="main-button" href="/results">View Sample Profile</a>
+            <button class="secondary-button" id="login-button">Login with Spotify</button>
+        </div>
+
+        <section class="preview-box">
+            <h2>What you will see</h2>
+            <ul>
+                <li>Your taste profile title</li>
+                <li>A short description of your music identity</li>
+                <li>Your top artists and genres</li>
+                <li>A score breakdown of your listening style</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

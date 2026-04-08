@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About This Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="nav-title">Spotify Taste Profile</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/results">Sample Results</a>
+        </div>
+    </nav>
+
+    <main class="about-page">
+        <section class="about-card">
+            <h1>About This Project</h1>
+            <p>
+                This project uses Spotify listening data to generate a personalized taste profile.
+                It looks at a user's top artists, genres, and music characteristics, then turns
+                that information into a simple summary of their listening style.
+            </p>
+
+            <h2>How it works</h2>
+            <ol>
+                <li>The user logs in with Spotify.</li>
+                <li>The app collects top artists and tracks.</li>
+                <li>The project computes simple listening scores.</li>
+                <li>The user receives a taste profile based on those results.</li>
+            </ol>
+
+            <h2>Built with</h2>
+            <ul>
+                <li>Python</li>
+                <li>Flask</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
