@@ -7,6 +7,8 @@ We will build a model that takes data from Letterboxd, such as watched films, ra
 Initial:
 One thing I would think about is what do you plan to do with the profile? How will the user interact with your project (is that through a website)? What elements of a user's Letterboxd profile connects them to a specific taste profile?
 
-Office Hours: 
+Office Hours:
+Letterboxd doesn't have an API
+
 
 # Process
