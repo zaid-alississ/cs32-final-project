@@ -9,6 +9,7 @@ One thing I would think about is what do you plan to do with the profile? How wi
 
 Office Hours:
 Letterboxd doesn't have an API
+Can create fake profile using a JSON file
 
 
 # Process
