@@ -10,6 +10,10 @@ One thing I would think about is what do you plan to do with the profile? How wi
 Office Hours:
 Letterboxd doesn't have an API
 Can create fake profile using a JSON file
-See what variables the API will give you 
+See what variables the API will give you
+
+one file for loading data
+one file for algorithm and recommendations
+website would be different files (html, css, javascript)
 
 # Process
