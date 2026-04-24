@@ -32,6 +32,16 @@
                 </ul>
             </div>
 
+        <section class="info-grid">
+            <div class="info-box">
+                <h2>Top Tracks</h2>
+                <ul>
+                    {% for track in top_tracks %}
+                        <li>{{ track }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
             <div class="info-box">
                 <h2>Top Genres</h2>
                 <ul>

@@ -2,14 +2,17 @@ from flask import Flask, redirect, request, session, url_for, render_template
 import os
 import requests
 import urllib.parse
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "dev-secret-key")
 
-CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
-CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
-REDIRECT_URI = "https://laughing-acorn-jr79v7wwv77f4xg-5000.app.github.dev/callback"
-SCOPE = "user-top-read"
+CLIENT_ID = os.getenv("CLIENT_ID")
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+REDIRECT_URI = os.getenv("REDIRECT_URI")
+SCOPE = os.getenv("SCOPE")
 
 
 @app.route("/")
@@ -83,7 +86,7 @@ def results():
     headers = {"Authorization": f"Bearer {token}"}
 
     artists_res = requests.get(
-        "https://api.spotify.com/v1/me/top/artists?limit=10",
+        "https://api.spotify.com/v1/me/top/artists?limit=5&time_range=short_term",
         headers=headers,
         timeout=10,
     )
@@ -94,6 +97,19 @@ def results():
     artists_data = artists_res.json()
 
     top_artists = [artist["name"] for artist in artists_data.get("items", [])]
+
+    tracks_res = requests.get(
+        "https://api.spotify.com/v1/me/top/tracks?limit=5&time_range=short_term",
+        headers=headers,
+        timeout=10,
+    )
+
+    if tracks_res.status_code != 200:
+        return f"Top tracks request failed: {tracks_res.text}"
+
+    tracks_data = tracks_res.json()
+
+    top_tracks = [track["name"] for track in tracks_data.get("items", [])]
 
     genre_counts = {}
     for artist in artists_data.get("items", []):
@@ -106,18 +122,19 @@ def results():
     profile_description = "This is a first version of your Spotify taste profile based on your top artists and genres."
 
     scores = {
-        "Energy": 75,
-        "Variety": min(len(top_genres) * 15, 100),
-        "Mainstream": 60,
+        "Energy": 0,
+        "Variety": 0,
+        "Mainstream": 0,
     }
 
     return render_template(
-        "results.html",
-        profile_name=profile_name,
-        profile_description=profile_description,
-        top_artists=top_artists,
-        top_genres=top_genres,
-        scores=scores,
+    "results.html",
+    profile_name=profile_name,
+    profile_description=profile_description,
+    top_artists=top_artists,
+    top_tracks=top_tracks,
+    top_genres=top_genres,
+    scores=scores,
     )
 
 
