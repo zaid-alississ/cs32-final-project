@@ -1,8 +1,11 @@
 from flask import Flask, redirect, request, session, url_for, render_template
+from dotenv import load_dotenv
 import os
 import requests
 import urllib.parse
 from dotenv import load_dotenv
+
+load_dotenv()
 
 load_dotenv()
 
