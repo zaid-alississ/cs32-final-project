@@ -1,7 +1,7 @@
 # cs32-final-project
 Final project with Khalid and Kim
 
-We will build a model that takes data from Spotify and creates a Spotify Taste Profile Generator.  By analyzing patterns in listening history, the model will create tailored suggestions and a personalized taste profile, in order to make discovering new songs easier and save time for when you don't know what song to listen to.
+We will build a model that takes data from Spotify and creates a Spotify Taste Profile Generator.  By analyzing patterns in listening history, the model will create tailored suggestions and a personalized taste profile, in order to make discovering new songs easier and save time for when you don't know what song to listen to. We are specifically lookng at a user's top 10 artists over the last 6 months. 
 
 # Comments from Katherine
 Initial:
