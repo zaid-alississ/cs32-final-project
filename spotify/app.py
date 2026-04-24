@@ -101,19 +101,6 @@ def results():
 
     top_artists = [artist["name"] for artist in artists_data.get("items", [])]
 
-    tracks_res = requests.get(
-        "https://api.spotify.com/v1/me/top/tracks?limit=5&time_range=short_term",
-        headers=headers,
-        timeout=10,
-    )
-
-    if tracks_res.status_code != 200:
-        return f"Top tracks request failed: {tracks_res.text}"
-
-    tracks_data = tracks_res.json()
-
-    top_tracks = [track["name"] for track in tracks_data.get("items", [])]
-
     genre_counts = {}
     for artist in artists_data.get("items", []):
         for genre in artist.get("genres", []):
@@ -131,13 +118,12 @@ def results():
     }
 
     return render_template(
-    "results.html",
-    profile_name=profile_name,
-    profile_description=profile_description,
-    top_artists=top_artists,
-    top_tracks=top_tracks,
-    top_genres=top_genres,
-    scores=scores,
+        "results.html",
+        profile_name=profile_name,
+        profile_description=profile_description,
+        top_artists=top_artists,
+        top_genres=top_genres,
+        scores=scores,
     )
 
 
