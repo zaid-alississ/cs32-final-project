@@ -48,6 +48,15 @@
                 <p><strong>Average Monthly Listener Count:</strong> {{ "{:,}".format(avg_listeners) }}</p>
                 <p><strong>Profile Type:</strong> {{ popularity_label }}</p>
             </div>
+
+            <div class="info-box">
+                <h2>Recommended Artist</h2>
+                <ul>
+                    {% for artist in recommended_artists %}
+                        <li>{{ artist }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
         </section>
 
     </main>
