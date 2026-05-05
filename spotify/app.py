@@ -115,11 +115,14 @@ def results():
         "Mainstream": 0,
     }
 
+    top_tracks = []
+
     return render_template(
         "results.html",
         profile_name=profile_name,
         profile_description=profile_description,
         top_artists=top_artists,
+        top_tracks=top_tracks,
         top_genres=top_genres,
         scores=scores,
     )
