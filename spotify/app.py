@@ -116,6 +116,8 @@ def results():
         timeout=10,
     )
 
+    top_tracks = [track["name"] for track in tracks_res.json().get("items", [])]
+
     with open("sample_artists.json") as f:
         sample_artists = json.load(f)
 
