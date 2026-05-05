@@ -110,8 +110,8 @@ def results():
     profile_name = "Spotify Taste Profile"
     profile_description = "This is a first version of your Spotify taste profile based on your top artists and genres."
 
-    artists_res = requests.get(
-        "https://api.spotify.com/v1/me/top/artists?limit=5&time_range=short_term",
+    tracks_res = requests.get(
+        "https://api.spotify.com/v1/me/top/tracks?limit=5&time_range=short_term",
         headers=headers,
         timeout=10,
     )
