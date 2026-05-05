@@ -1,6 +1,8 @@
+from check50 import data, json
 from flask import Flask, redirect, request, session, url_for, render_template
 from dotenv import load_dotenv
 import os
+import json
 import requests
 import urllib.parse
 from dotenv import load_dotenv
@@ -109,13 +111,12 @@ def results():
     profile_name = "Spotify Taste Profile"
     profile_description = "This is a first version of your Spotify taste profile based on your top artists and genres."
 
-    scores = {
-        "Energy": 0,
-        "Variety": 0,
-        "Mainstream": 0,
-    }
-
     top_tracks = []
+
+    with open("sample_artists.json") as f:
+        sample_artists = json.load(f)
+
+    sample_artists = data["artists"]
 
     return render_template(
         "results.html",
