@@ -199,9 +199,14 @@ def results():
         top_artists=top_artists,
         top_tracks=top_tracks,
         top_genres=top_genres,
+<<<<<<< HEAD
         artist_listener_data=artist_listener_data,
         avg_listeners=round(avg_listeners),
         popularity_label=popularity_label,
+=======
+        recommended_artist=recommended_artist, # Needs to be defined elsewhere
+        scores=scores, # Not sure that this is needed still. 
+>>>>>>> 8c2150c (Tue, May 5, 2026, 4:25 PM -04:00)
     )
 
 if __name__ == "__main__":
