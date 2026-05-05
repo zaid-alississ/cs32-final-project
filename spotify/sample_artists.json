@@ -1,0 +1,41 @@
+{
+  "artists": [
+    { "name": "Drake", "genres": ["hip hop", "rap", "canadian hip hop"], "popularity": 96 },
+    { "name": "Kendrick Lamar", "genres": ["hip hop", "rap", "west coast rap"], "popularity": 92 },
+    { "name": "JID", "genres": ["hip hop", "rap"], "popularity": 68 },
+    { "name": "JPEGMAFIA", "genres": ["experimental hip hop", "rap"], "popularity": 48 },
+
+    { "name": "Taylor Swift", "genres": ["pop", "dance pop"], "popularity": 100 },
+    { "name": "Ariana Grande", "genres": ["pop", "dance pop"], "popularity": 92 },
+    { "name": "Charli xcx", "genres": ["pop", "art pop"], "popularity": 78 },
+    { "name": "Magdalena Bay", "genres": ["art pop", "electropop"], "popularity": 49 },
+
+    { "name": "Arctic Monkeys", "genres": ["indie rock", "modern rock"], "popularity": 86 },
+    { "name": "The Strokes", "genres": ["indie rock", "garage rock", "modern rock"], "popularity": 79 },
+    { "name": "Fontaines D.C.", "genres": ["post-punk", "indie rock"], "popularity": 58 },
+    { "name": "black midi", "genres": ["experimental rock", "post-punk"], "popularity": 44 },
+
+    { "name": "Tame Impala", "genres": ["psychedelic rock", "indie"], "popularity": 82 },
+    { "name": "Mac DeMarco", "genres": ["indie", "lo-fi"], "popularity": 70 },
+    { "name": "Alex G", "genres": ["indie", "lo-fi"], "popularity": 59 },
+    { "name": "Mk.gee", "genres": ["indie", "alternative"], "popularity": 47 },
+
+    { "name": "SZA", "genres": ["r&b", "neo soul"], "popularity": 91 },
+    { "name": "The Weeknd", "genres": ["r&b", "canadian contemporary r&b"], "popularity": 94 },
+    { "name": "Steve Lacy", "genres": ["alternative r&b", "indie soul"], "popularity": 75 },
+    { "name": "Blood Orange", "genres": ["alternative r&b", "indie soul"], "popularity": 50 },
+
+    { "name": "Daft Punk", "genres": ["electronic", "house"], "popularity": 84 },
+    { "name": "Fred again..", "genres": ["uk dance", "electronic"], "popularity": 79 },
+    { "name": "Kaytranada", "genres": ["electronic", "hip hop"], "popularity": 69 },
+    { "name": "Aphex Twin", "genres": ["ambient", "electronic"], "popularity": 55 },
+
+    { "name": "Phoebe Bridgers", "genres": ["indie folk", "indie"], "popularity": 73 },
+    { "name": "Bon Iver", "genres": ["indie folk", "folk"], "popularity": 72 },
+    { "name": "Adrianne Lenker", "genres": ["indie folk", "folk"], "popularity": 54 },
+    { "name": "Elliott Smith", "genres": ["indie folk", "alternative rock"], "popularity": 59 },
+
+    { "name": "Ludovico Einaudi", "genres": ["classical", "modern classical"], "popularity": 73 },
+    { "name": "Johann Sebastian Bach", "genres": ["classical", "baroque"], "popularity": 69 }
+  ]
+}
