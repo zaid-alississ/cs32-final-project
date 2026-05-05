@@ -31,8 +31,8 @@ def about():
 def login():
     if not CLIENT_ID or not CLIENT_SECRET:
         return (
-            "Missing Spotify credentials. Set SPOTIFY_CLIENT_ID and "
-            "SPOTIFY_CLIENT_SECRET in your terminal first."
+            "Missing Spotify credentials. Set CLIENT_ID and "
+            "CLIENT_SECRET in your terminal first."
         )
 
     params = {
