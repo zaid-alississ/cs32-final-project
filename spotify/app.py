@@ -115,7 +115,7 @@ def results():
     with open("sample_artists.json") as f:
         sample_artists = json.load(f)
 
-    sample_artists = data["artists"]
+    sample_artists = artists_data.get("items", [])
 
     return render_template(
         "results.html",
