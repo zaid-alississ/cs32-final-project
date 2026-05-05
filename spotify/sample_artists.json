@@ -34,8 +34,5 @@
     { "name": "Bon Iver", "genres": ["indie folk", "folk"], "popularity": 72, "track": "Skinny Love" },
     { "name": "Adrianne Lenker", "genres": ["indie folk", "folk"], "popularity": 54, "track": "anything" },
     { "name": "Elliott Smith", "genres": ["indie folk", "alternative rock"], "popularity": 59, "track": "Between the Bars" },
-
-    { "name": "Ludovico Einaudi", "genres": ["classical", "modern classical"], "popularity": 73, "track": "Nuvole Bianche" },
-    { "name": "Johann Sebastian Bach", "genres": ["classical", "baroque"], "popularity": 69, "track": "Cello Suite No. 1 in G Major, BWV 1007: Prelude" }
   ]
 }
