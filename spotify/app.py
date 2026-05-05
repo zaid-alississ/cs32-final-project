@@ -117,6 +117,12 @@ def results():
 
     sample_artists = artists_data.get("items", [])
 
+    scores = {
+    "Energy": 50,
+    "Variety": 50,
+    "Mainstream": 50,
+    }
+
     return render_template(
         "results.html",
         profile_name=profile_name,
