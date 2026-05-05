@@ -1,4 +1,3 @@
-from check50 import data, json
 from flask import Flask, redirect, request, session, url_for, render_template
 from dotenv import load_dotenv
 import os
