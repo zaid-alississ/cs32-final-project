@@ -190,7 +190,8 @@ def results():
     top_tracks = [track["name"] for track in tracks_res.json().get("items", [])]
 
     with open("sample_artists.json") as f:
-        sample_artists = json.load(f)
+        sample_data = json.load(f)
+        sample_artists = sample_data["artists"]
 
     top_artist = spotify_artists[0] if spotify_artists else None
 
