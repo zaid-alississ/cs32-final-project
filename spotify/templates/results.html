@@ -45,7 +45,7 @@
 
             <div class="info-box full-width">
                 <h2>Your Popularity Profile</h2>
-                <p><strong>Average Listener Count:</strong> {{ avg_listeners }}</p>
+                <p><strong>Average Monthly Listener Count:</strong> {{ "{:,}".format(avg_listeners) }}</p>
                 <p><strong>Profile Type:</strong> {{ popularity_label }}</p>
             </div>
         </section>
