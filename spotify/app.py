@@ -113,6 +113,8 @@ def results():
             "followers": followers,
             "genres": genres
         })
+        print(artist_followers)
+
 
     genre_counts = {}
     for artist in artists_data.get("items", []):
