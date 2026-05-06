@@ -192,6 +192,13 @@ def results():
     with open("sample_artists.json") as f:
         sample_artists = json.load(f)
 
+    top_artist = spotify_artists[0] if spotify_artists else None
+
+    if top_artist:
+        recommendation = find_recommendation(top_artist, avg_listeners, sample_artists)
+    else:
+        recommendation = None
+
     return render_template(
         "results.html",
         profile_name=profile_name,
@@ -202,6 +209,7 @@ def results():
         artist_listener_data=artist_listener_data,
         avg_listeners=round(avg_listeners),
         popularity_label=popularity_label,
+        recommendation=recommendation,
     )
 
 if __name__ == "__main__":
