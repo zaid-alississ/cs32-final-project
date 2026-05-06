@@ -195,10 +195,14 @@ def results():
 
     top_artist = spotify_artists[0] if spotify_artists else None
 
+    #if top_artist:
+        #recommendation = find_recommendation(top_artist, avg_listeners, sample_artists)
+   # else:
+     #   recommendation = None
     if top_artist:
-        recommendation = find_recommendation(top_artist, avg_listeners, sample_artists)
-    else:
-        recommendation = None
+        print("\n--- DEBUG: TOP ARTIST GENRES ---")
+        print("Top artist:", top_artist["name"])
+        print("Genres:", top_artist.get("genres", []))
 
     return render_template(
         "results.html",
@@ -211,6 +215,7 @@ def results():
         avg_listeners=round(avg_listeners),
         popularity_label=popularity_label,
         recommendation=recommendation,
+        top_artist_genres=top_artist.get("genres", []) if top_artist else []
     )
 
 if __name__ == "__main__":
