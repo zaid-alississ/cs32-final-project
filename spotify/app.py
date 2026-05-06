@@ -193,7 +193,7 @@ def results():
         sample_data = json.load(f)
         sample_artists = sample_data["artists"]
 
-    top_artist = spotify_artists[0] if spotify_artists else None
+    top_artist = spotify_artists[1] if spotify_artists else None
 
     if top_artist:
         recommendation = find_recommendation(top_artist, avg_listeners, sample_artists)
