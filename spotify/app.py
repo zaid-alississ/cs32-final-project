@@ -99,7 +99,20 @@ def results():
     artists_data = artists_res.json()
 
     top_artists = [artist["name"] for artist in artists_data.get("items", [])]
-    popularities = [artist["popularity"] for artist in artists_data.get("items", [])]
+    spotify_artists = artists_data.get("items", [])
+
+    artist_followers = []
+
+    for artist in top_artists:
+        name = artist.get("name", "Unknown")
+        followers = artist.get("followers", {}).get("total", 0)
+        genres = artist.get("genres", [])
+
+        artist_followers.append({
+            "name": name,
+            "followers": followers,
+            "genres": genres
+        })
 
     genre_counts = {}
     for artist in artists_data.get("items", []):
