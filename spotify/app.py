@@ -103,6 +103,9 @@ def results():
     top_artists = [artist["name"] for artist in spotify_artists]
 
     artist_listener_data = []
+    print("\n--- DEBUG: TOP ARTIST LISTENERS ---")
+    for artist in artist_listener_data:
+        print(f"{artist['name']}: {artist['listeners']}")
 
     for artist in spotify_artists:
         name = artist["name"]
