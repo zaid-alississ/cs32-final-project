@@ -146,10 +146,13 @@ def results():
 
         artist_info = get_artist_info(name)
 
-        artist_listener_data.append({
-            "name": artist_info["name"],
-            "listeners": artist_info["listeners"],
-            "genres": artist_info["genres"]
+        print("Returned info:", artist_info)
+
+        if artist_info:
+            artist_listener_data.append({
+                "name": artist_info["name"],
+                "listeners": artist_info["listeners"],
+                "genres": artist_info["genres"]
         })
 
     print("\n--- DEBUG: TOP ARTIST LISTENERS ---")
@@ -193,7 +196,7 @@ def results():
         sample_data = json.load(f)
         sample_artists = sample_data["artists"]
 
-    top_artist = spotify_artists[1] if spotify_artists else None
+    top_artist = spotify_artists[0] if spotify_artists else None
 
     if top_artist:
         recommendation = find_recommendation(top_artist, avg_listeners, sample_artists)
