@@ -195,10 +195,10 @@ def results():
 
     top_artist = spotify_artists[0] if spotify_artists else None
 
-    #if top_artist:
-        #recommendation = find_recommendation(top_artist, avg_listeners, sample_artists)
-   # else:
-     #   recommendation = None
+    if top_artist:
+        recommendation = find_recommendation(top_artist, avg_listeners, sample_artists)
+    else:
+        recommendation = None
     if top_artist:
         print("\n--- DEBUG: TOP ARTIST GENRES ---")
         print("Top artist:", top_artist["name"])
