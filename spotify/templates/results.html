@@ -52,20 +52,6 @@
             </div>
         </section>
 
-        <section class="score-box">
-            <h2>Your Listening Scores</h2>
-            <div class="score-list">
-                {% for category, value in scores.items() %}
-                    <div class="score-item">
-                        <span class="score-label">{{ category }}</span>
-                        <div class="score-bar-background">
-                            <div class="score-bar-fill" style="width: {{ value }}%;"></div>
-                        </div>
-                        <span class="score-value">{{ value }}</span>
-                    </div>
-                {% endfor %}
-            </div>
-        </section>
     </main>
 </body>
 </html>
