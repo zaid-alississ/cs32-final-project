@@ -51,11 +51,15 @@
 
             <div class="info-box full-width">
                 <h2>Recommended Artist</h2>
-                <ul>
-                    {% for artist in recommended_artist %}
-                        <li>{{ artist }}</li>
-                    {% endfor %}
-                </ul>
+
+                {% if recommendation %}
+                    <p><strong>{{ recommendation.name }}</strong></p>
+                    <p>Genres: {{ recommendation.genres | join(", ") }}</p>
+                    <p>Monthly Listeners: {{ "{:,}".format(recommendation.listeners) }}</p>
+                    <p>Suggested Track: {{ recommendation.track }}</p>
+                {% else %}
+                    <p>No recommendation found.</p>
+                {% endif %}
             </div>
         </section>
 
