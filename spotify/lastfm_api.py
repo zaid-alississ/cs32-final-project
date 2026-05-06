@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def get_artist_listeners(artist_name):
+def get_artist_info(artist_name):
     api_key = os.getenv("LASTFM_API_KEY")
 
     print("Last.fm API key loaded:", api_key is not None)
@@ -30,4 +30,15 @@ def get_artist_listeners(artist_name):
     if "error" in data:
         return None
 
-    return int(data["artist"]["stats"]["listeners"])
+    artist = data.get("artist", {})
+
+    listeners = int(artist["stats"]["listeners"])
+
+    tags = artist.get("tags", {}).get("tag", [])
+    genres = [tag["name"].lower() for tag in tags[:5]]
+
+    return {
+        "name": artist_name,
+        "listeners": listeners,
+        "genres": genres
+    }

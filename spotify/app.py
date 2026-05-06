@@ -5,7 +5,7 @@ import json
 import requests
 import urllib.parse
 from dotenv import load_dotenv
-from lastfm_api import get_artist_listeners
+from lastfm_api import get_artist_info
 
 load_dotenv()
 
