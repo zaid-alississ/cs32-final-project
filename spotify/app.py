@@ -5,6 +5,7 @@ import json
 import requests
 import urllib.parse
 from dotenv import load_dotenv
+from lastfm_api import get_artist_listeners
 
 load_dotenv()
 
@@ -99,6 +100,17 @@ def results():
     artists_data = artists_res.json()
 
     top_artists = [artist["name"] for artist in artists_data.get("items", [])]
+
+    artist_listener_data = []
+
+    for artist in spotify_artists:
+        name = artist["name"]
+        listeners = get_artist_listeners(name)
+
+        artist_listener_data.append({
+            "name": name,
+            "listeners": listeners
+        })
 
     genre_counts = {}
     for artist in artists_data.get("items", []):
