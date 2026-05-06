@@ -96,6 +96,10 @@ nav {
     gap: 20px;
 }
 
+.full-width {
+    grid-column: 1 / -1;
+}
+
 .info-box ul,
 .preview-box ul,
 .about-card ul,
