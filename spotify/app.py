@@ -97,27 +97,8 @@ def results():
         return f"Top artists request failed: {artists_res.text}"
 
     artists_data = artists_res.json()
-    print("\nFIRST ARTIST OBJECT:")
-    print(artists_data.get("items", [])[0])
-
-    print("\nFIRST ARTIST KEYS:")
-    print(artists_data.get("items", [])[0].keys())
 
     top_artists = [artist["name"] for artist in artists_data.get("items", [])]
-    spotify_artists = artists_data.get("items", [])
-
-    artist_followers = []
-
-    for artist in spotify_artists:
-        name = artist.get("name", "Unknown")
-        followers = artist.get("followers", {}).get("total", 0)
-        genres = artist.get("genres", [])
-
-        artist_followers.append({
-            "name": name,
-            "followers": followers,
-            "genres": genres
-        })
 
     genre_counts = {}
     for artist in artists_data.get("items", []):
