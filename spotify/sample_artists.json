@@ -40,13 +40,12 @@
     { "name": "Phoebe Bridgers", "genres": ["indie folk", "indie"], "popularity": 73, "track": "Motion Sickness" },
     { "name": "Bon Iver", "genres": ["indie folk", "folk"], "popularity": 72, "track": "Skinny Love" },
     { "name": "Adrianne Lenker", "genres": ["indie folk", "folk"], "popularity": 54, "track": "anything" },
-    { "name": "Elliott Smith", "genres": ["indie folk", "alternative rock"], "popularity": 59, "track": "Between the Bars" }
+    { "name": "Elliott Smith", "genres": ["indie folk", "alternative rock"], "popularity": 59, "track": "Between the Bars" },
     { "name": "Sufjan Stevens", "genres": ["indie folk", "folk"], "popularity": 48, "track": "Mystery of Love" },
 
     { "name": "Ludovico Einaudi", "genres": ["classical", "modern classical"], "popularity": 73, "track": "Nuvole Bianche" },
     { "name": "Johann Sebastian Bach", "genres": ["classical", "modern classical"], "popularity": 69, "track": "Cello Suite No. 1 in G Major, BWV 1007: Prelude" },
     { "name": "Max Richter", "genres": ["classical", "modern classical"], "popularity": 49, "track": "On the Nature of Daylight" },
     { "name": "Nils Frahm", "genres": ["classical", "modern classical"], "popularity": 47, "track": "Says" }
-
   ]
 }
