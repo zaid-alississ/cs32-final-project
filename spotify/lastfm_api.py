@@ -1,5 +1,8 @@
 import os
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_artist_listeners(artist_name):
     params = {
@@ -15,13 +18,10 @@ def get_artist_listeners(artist_name):
         timeout=10
     )
 
-    if res.status_code != 200:
-        print("Last.fm error:", res.text)
-        return None
-
     data = res.json()
 
-    try:
-        return int(data["artist"]["stats"]["listeners"])
-    except KeyError:
+    if "error" in data:
+        print("Last.fm API error:", data)
         return None
+
+    return int(data["artist"]["stats"]["listeners"])
