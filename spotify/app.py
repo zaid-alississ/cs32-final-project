@@ -122,6 +122,21 @@ def results():
     for artist in artist_listener_data:
         print(f"{artist['name']}: {artist['listeners']}")
 
+    listeners_list = [
+        a["listeners"] for a in artist_listener_data
+        if a["listeners"] is not None
+    ]
+
+    if listeners_list:
+        avg_listeners = sum(listeners_list) / len(listeners_list)
+    else:
+        avg_listeners = 0
+
+    if avg_listeners >= 1_000_000:
+        popularity_label = "Mainstream Listener"
+    else:
+        popularity_label = "Niche Listener"
+
     genre_counts = {}
     for artist in artists_data.get("items", []):
         for genre in artist.get("genres", []):
@@ -143,12 +158,6 @@ def results():
     with open("sample_artists.json") as f:
         sample_artists = json.load(f)
 
-    scores = {
-    "Energy": 50,
-    "Variety": 50,
-    "Mainstream": 50,
-    }
-
     return render_template(
         "results.html",
         profile_name=profile_name,
@@ -157,7 +166,8 @@ def results():
         top_tracks=top_tracks,
         top_genres=top_genres,
         artist_listener_data=artist_listener_data,
-        scores=scores,
+        avg_listeners=round(avg_listeners),
+        popularity_label=popularity_label,
     )
 
 if __name__ == "__main__":
