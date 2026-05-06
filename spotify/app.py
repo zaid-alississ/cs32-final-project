@@ -103,18 +103,24 @@ def results():
     top_artists = [artist["name"] for artist in spotify_artists]
 
     artist_listener_data = []
-    print("\n--- DEBUG: TOP ARTIST LISTENERS ---")
-    for artist in artist_listener_data:
-        print(f"{artist['name']}: {artist['listeners']}")
+
+    print("\n--- DEBUG: CALLING LAST.FM ---")
 
     for artist in spotify_artists:
         name = artist["name"]
+        print("Calling Last.fm for:", name)
+
         listeners = get_artist_listeners(name)
+        print("Returned listeners:", listeners)
 
         artist_listener_data.append({
             "name": name,
             "listeners": listeners
         })
+
+    print("\n--- DEBUG: TOP ARTIST LISTENERS ---")
+    for artist in artist_listener_data:
+        print(f"{artist['name']}: {artist['listeners']}")
 
     genre_counts = {}
     for artist in artists_data.get("items", []):
