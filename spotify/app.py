@@ -17,6 +17,40 @@ CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 REDIRECT_URI = os.getenv("REDIRECT_URI")
 SCOPE = os.getenv("SCOPE")
 
+def find_recommendation(top_artist, avg_listeners, sample_artists):
+    user_genres = set(top_artist.get("genres", []))
+    user_artist_names = {top_artist.get("name", "").lower()}
+
+    candidates = []
+
+    for artist in sample_artists:
+        artist_name = artist["name"]
+        artist_genres = set(artist.get("genres", []))
+        artist_listeners = artist.get("listeners", 0)
+
+        if artist_name.lower() in user_artist_names:
+            continue
+
+        genre_overlap = user_genres.intersection(artist_genres)
+
+        if not genre_overlap:
+            continue
+
+        if avg_listeners >= 1_000_000:
+            # User listens to popular artists, so recommend less popular similar artist
+            if artist_listeners < avg_listeners:
+                candidates.append((artist, len(genre_overlap)))
+        else:
+            # User listens to niche artists, so recommend more popular similar artist
+            if artist_listeners > avg_listeners:
+                candidates.append((artist, len(genre_overlap)))
+
+    if not candidates:
+        return None
+
+    # Prefer artists with the most genre overlap
+    candidates.sort(key=lambda item: item[1], reverse=True)
+    return candidates[0][0]
 
 @app.route("/")
 def home():
