@@ -98,8 +98,9 @@ def results():
         return f"Top artists request failed: {artists_res.text}"
 
     artists_data = artists_res.json()
+    spotify_artists = artists_data.get("items", [])
 
-    top_artists = [artist["name"] for artist in artists_data.get("items", [])]
+    top_artists = [artist["name"] for artist in spotify_artists]
 
     artist_listener_data = []
 
@@ -133,8 +134,6 @@ def results():
     with open("sample_artists.json") as f:
         sample_artists = json.load(f)
 
-    sample_artists = artists_data.get("items", [])
-
     scores = {
     "Energy": 50,
     "Variety": 50,
@@ -148,6 +147,7 @@ def results():
         top_artists=top_artists,
         top_tracks=top_tracks,
         top_genres=top_genres,
+        artist_listener_data=artist_listener_data,
         scores=scores,
     )
 
