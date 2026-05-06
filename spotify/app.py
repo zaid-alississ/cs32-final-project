@@ -103,7 +103,7 @@ def results():
 
     artist_followers = []
 
-    for artist in top_artists:
+    for artist in spotify_artists:
         name = artist.get("name", "Unknown")
         followers = artist.get("followers", {}).get("total", 0)
         genres = artist.get("genres", [])
