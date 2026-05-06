@@ -144,12 +144,12 @@ def results():
         name = artist["name"]
         print("Calling Last.fm for:", name)
 
-        listeners = get_artist_listeners(name)
-        print("Returned listeners:", listeners)
+        artist_info = get_artist_info(name)
 
         artist_listener_data.append({
-            "name": name,
-            "listeners": listeners
+            "name": artist_info["name"],
+            "listeners": artist_info["listeners"],
+            "genres": artist_info["genres"]
         })
 
     print("\n--- DEBUG: TOP ARTIST LISTENERS ---")
